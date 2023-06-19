@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+    <navigation-rule>
+        <description>Admin's Main Menu</description>
+        <from-view-id>admin/mainmenu.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>logout.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Add Employee</description>
+        <from-view-id>/admin/addEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/addEmployeeSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/addEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Display Employee</description>
+        <from-view-id>/admin/displayEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/displayEmployeeDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/displayEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/admin/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change employee</description>
+        <from-view-id>/admin/changeEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/changeEmployeeDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/changeEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/admin/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change details</description>
+        <from-view-id>/admin/changeEmployeeDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/changeEmployeeSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/changeEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/admin/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change Password</description>
+        <from-view-id>/admin/changeEmployeePassword.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/changePasswordSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/changePasswordFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Delete Employee</description>
+        <from-view-id>/admin/deleteEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/deleteEmployeeSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/deleteEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+            <!--    user config-->
+    
+    <navigation-rule>
+        <description>Employee's Main Menu</description>
+        <from-view-id>employee/empMainMenu.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>logout.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>        
+    <navigation-rule>
+        <description>Display Employee</description>
+        <from-view-id>/employee/displayEmp.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/employee/displayEmpDeatils.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/employee/displayEmpFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/employee/debugEmpIdEmp.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>   
+    <navigation-rule>
+        <description>Change employee</description>
+        <from-view-id>/employee/changeDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/employee/changeDetailsInfo.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/employee/changeDetailsFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/employee/debugEmpIdEmp.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change details</description>
+        <from-view-id>/employee/changeDetailsInfo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/employee/changeDetailsSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/employee/changeDetailsFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/employee/debugEmpIdEmp.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change Password</description>
+        <from-view-id>/employee/changeEmpPassword.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/employee/changeEmpPasswordSuccess.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/employee/changeEmpPasswordFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>     
+</faces-config>

@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Change Employee's Details</title>
+    </h:head>
+    <h:body>
+        
+        <h2>Change Employee Details Page</h2>
+            
+        <h3>Please update the details of employee
+            <h:outputText value="#{myEmpManagedBean.empId}"/>
+        </h3>
+        
+        <p></p>
+
+        <h:form>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Employee Id:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myEmpManagedBean.empId}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Name" id="name"
+                                         maxlength="25"
+                                         required="true" 
+                                         requiredMessage="Name must not be blank"
+                                         value="#{myEmpManagedBean.name}"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Phone" maxlength="10"
+                                         required="false"
+                                         value="#{myEmpManagedBean.phone}"/>     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Address" maxlength="30" 
+                                         required="false"
+                                         value="#{myEmpManagedBean.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Email" maxlength="30" 
+                                         required="false"
+                                         value="#{myEmpManagedBean.email}"/>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <h:outputLabel value="User Group:"/>
+                        </td>
+                        <td>
+                            <h:selectOneMenu id="appGroup"
+                                             required="true"
+                                             value="#{myEmpManagedBean.appGroup}">
+                                <f:selectItem itemValue="ED-APP-ADMIN" itemLabel="ED-APP-ADMIN"></f:selectItem>                                
+                                <f:selectItem itemValue="ED-APP-USERS" itemLabel="ED-APP-USERS"></f:selectItem>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>                       
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Bank Account No"/>
+                        </td>
+                        <td>
+                            <h:inputText title="BnkAccId" 
+                                         required="false" maxlength="10" 
+                                         value="#{myEmpManagedBean.bnkAccId}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Salary:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Salary" id="salary" 
+                                         required="true"
+                                         requiredMessage="Salary cannot be blank"
+                                         value="#{myEmpManagedBean.salary}"
+                                         validatorMessage="Salary must be positive!">
+                                <f:validateDoubleRange minimum="0.001"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="salary" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Active:" for="active"/> 
+                        </td>
+                        <td>
+                            <h:selectBooleanCheckbox id="active" 
+                                                     required="false" 
+                                                     value="#{myEmpManagedBean.active}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{myEmpManagedBean.changeEmployee()}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+

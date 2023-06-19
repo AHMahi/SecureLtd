@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Secure Company - EMS - Main Menu</title>
+    </h:head>
+    <h:body>
+
+        <h1>
+            <h:outputText value="SECURE Company Ltd"/>
+        </h1>
+
+        <h2>
+            <h:outputText value="Employee Management System"/>
+        </h2>
+
+        <h2>
+            <h:outputText value="Main Menu"/>
+        </h2>
+
+        <ol>
+            <li>
+                <h:outputLink value="addEmployee.xhtml">
+                    Add a new employee
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="changeEmployee.xhtml">
+                    Change an employee's details
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="changeEmployeePassword.xhtml">
+                    Change an employee's password
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="deleteEmployee.xhtml">
+                    Delete an employee
+                </h:outputLink>
+            </li>
+
+            <li>
+                <h:outputLink value="displayEmployee.xhtml">
+                    Display employee's details
+                </h:outputLink>
+            </li>
+        </ol>
+
+        <h:form>
+            Click <h:commandButton value="Logout" action="#{myLoginManagedBean.logoutResult()}"/>           
+        </h:form>
+
+    </h:body>
+</html>
+

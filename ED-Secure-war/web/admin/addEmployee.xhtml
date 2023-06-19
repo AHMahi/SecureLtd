@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Add a new Employee</title>
+    </h:head>
+    <h:body>
+
+        <h2>Please enter the details of an employee</h2>
+
+        <h:form>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Employee Id:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="EmpId" id="empid"
+                                         required="true" 
+                                         requiredMessage="Employee id must not be blank"
+                                         maxlength="5" 
+                                         value="#{myEmpManagedBean.empId}">
+                                <f:validateLength minimum="5" maximum="5"/>
+                            </h:inputText>
+                        </td>
+                        <td>
+                            <h:message for="empid" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Name" id="name"
+                                         maxlength="25"
+                                         required="true" 
+                                         requiredMessage="Name must not be blank"
+                                         value="#{myEmpManagedBean.name}"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Phone" maxlength="10"
+                                         required="false"
+                                         value="#{myEmpManagedBean.phone}"/>     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Address" maxlength="30" 
+                                         required="false"
+                                         value="#{myEmpManagedBean.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Email" maxlength="30" 
+                                         required="false"
+                                         value="#{myEmpManagedBean.email}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Password:"/>
+                        </td>
+                        <td>
+                            <h:inputSecret title="Password" id="password"
+                                         maxlength="8" required="true" 
+                                         requiredMessage="Password cannot be blank"
+                                         validator="#{myEmpManagedBean.validatePasswordPair}"
+                                         value="#{myEmpManagedBean.password}">
+                                <f:validateLength minimum="8" maximum="8"/>
+                                <f:attribute name="cnfpwd" value="#{cnfpwd}"/>
+                            </h:inputSecret>
+                        </td>
+                        <td>
+                            <h:message for="password" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Confirm Password:"/>
+                        </td>
+                        <td>
+                            <h:inputSecret id="cnfpwd" binding="#{cnfpwd}"
+                                         title="ConfirmPassword"
+                                         maxlength="8" 
+                                         required="true"
+                                         requiredMessage="Confirm Password must not be blank"
+                                         value="#{myEmpManagedBean.confirmPassword}">
+                                <f:validateLength minimum="8" maximum="8"/>
+                            </h:inputSecret>
+                        </td>
+                        <td>
+                            <h:message for="cnfpwd" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="UserGroup:"/>
+                        </td>
+                        <td>
+                            <h:selectOneMenu id="appGroup"
+                                             required="true"
+                                             value="#{myEmpManagedBean.appGroup}">
+                                <f:selectItem itemValue="ED-APP-ADMIN" itemLabel="ED-APP-ADMIN"></f:selectItem>                                
+                                <f:selectItem itemValue="ED-APP-USERS" itemLabel="ED-APP-USERS"></f:selectItem>
+                            </h:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Bank Account No:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="BankAccountId" 
+                                         required="false" maxlength="12" 
+                                         value="#{myEmpManagedBean.bnkAccId}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Salary:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Salary" id="salary" 
+                                         required="true"
+                                         requiredMessage="Salary cannot be blank"
+                                         value="#{myEmpManagedBean.salary}"
+                                         validatorMessage="Salary must be positive!">
+                                <f:validateDoubleRange minimum="0.001"/>
+                            </h:inputText>
+
+                        </td>
+                        <td>
+                            <h:message for="salary" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Active:" for="active"/> 
+                        </td>
+                        <td>
+                            <h:selectBooleanCheckbox id="active" required="false" 
+                                                     value="#{myEmpManagedBean.active}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{myEmpManagedBean.addEmployee()}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
+
+

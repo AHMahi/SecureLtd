@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Delete Employee Failure</title>
+    </h:head>
+    <h:body>
+        
+        <h2>Cannot delete an employee whose id is 
+        <h:outputText value="#{myEmpManagedBean.empId}"/>!</h2>
+
+        <p></p>
+        
+        Probably attempt to remove either a non-existing employee or an already deleted employee
+        
+        <p></p>
+        
+        <h2>Please ensure that the employee id do exist and 
+            the employee has not be deleted in the system.</h2>
+
+        <p></p>
+        
+        Click <h:outputLink value="deleteEmployee.xhtml">here</h:outputLink>
+        to try again
+        
+        <p></p>
+            
+        Click <h:outputLink value="mainmenu.xhtml">here</h:outputLink>
+        to return to the Main Menu
+
+    </h:body>
+</html>
+
